@@ -1,67 +1,78 @@
+<!-- Container Principal do Login -->
 <div class="login-container br-container">
+  <!-- Alinhamento dos elementos na linha principal -->
   <div class="br-row align-items-center">
+    <div class="row">    
 
-    <div class="row">
-      <!-- Coluna da Imagem --> 
-      <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">               
-        <img src="/assets/govbr/img/imprensa.png" alt="Imagem de Login" class="img-fluid" style="max-width: 100%; height: auto;">   
-      </div>
+      <!-- Coluna do Card de Login -->
+      <div class="col">
+        <div id="card-login" class="br-column col-12 col-lg-8">
+          <div id="br-card" class="br-card">
 
-    <div class="col">
-        <!-- Coluna do Card de Login -->
-    <div class="br-column col-12 col-lg-6" style="max-width: 350px; margin: auto;">
-      <div class="br-card">
-        <div class="card-header">
-          <div class="d-flex">
-            <div class="text-bold text-uppercase">Login</div>
-          </div>
-        </div>
-        <div class="card-content">
-          <!-- Campo de Usuário -->
-          <div class="br-input mb-1">
-            <label for="input-usuario">Usuário</label>
-            <input id="input-usuario" type="text" placeholder="Nome do Usuário" />
-            <button class="br-button" type="button" aria-label="Usuário" role="switch" aria-checked="false">
-              <i class="fas fa-user" aria-hidden="true"></i>
-            </button>
-          </div>
-          <!-- Campo de Senha -->
-          <div class="br-input mb-1">
-            <label for="input-password">Senha</label>
-            <input id="input-password" type="password" placeholder="Digite sua senha" />
-            <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false">
-              <i class="fas fa-eye" aria-hidden="true"></i>
-            </button>
-          </div>
-          <br>
-            <div class="br-checkbox">
-              <input id="checkbox-01" name="checkbox-01" type="checkbox" aria-label="opção 1" checked="checked" data-child="check-01"/>
-              <label for="checkbox-01">Manter-me conectado</label>
-              <a class="br-item" href="javascript:void(0)">Esqueceu a senha?</a>
-            </div>            
-        </div>                
-        <div class="card-footer d-flex flex-column">
-          <!-- Botão de Entrar -->
-          <button class="br-button primary w-100 mb-1" type="button">
-            <i class="fas fa-user" aria-hidden="true"></i> Entrar
-          </button>
-          <hr>
-          <!-- Botão de Entrar com GovBR -->
-          <button class="br-button w-100" type="button">
-            Entrar com&nbsp;
-            <img src="https://www.gov.br/++theme++padrao_govbr/img/govbr-colorido-b.png" alt="gov.br" style="height: 20px;" />
-          </button>
-          <a class="br-item" [routerLink]="['/signup']" style="text-align: center;">Fazer Cadastro</a>
-          <div>
-            <div class="row">
-              <div class="col"><a class="br-item" href="javascript:void(0)">Política de privacidade</a></div>
-              <div class="col"><a class="br-item" href="javascript:void(0)">Precisa de ajuda?</a></div>              
+            <!-- Coluna da Imagem --> 
+            <div class="d-flex justify-content-center">             
+              <img src="/assets/govbr/img/imprensa.png" alt="Imagem de Login" />   
             </div>
+
+            <div class="card-header">
+              <div class="d-flex justify-content-center"> 
+                <!-- Título "Login" em texto negrito e letras maiúsculas -->
+                <div class="text-bold text-uppercase">Acesso ao IN SSO</div>
+              </div>
+            </div>
+
+            <form>
+              <div class="card-content">
+                <!-- Campo de Usuário -->
+                <div class="br-input mb-1">
+                  <label for="input-usuario">Usuário</label>
+                  <input id="input-usuario" type="text" placeholder="Nome do Usuário" />
+                  <button class="br-button" type="button" aria-label="Usuário" role="switch" aria-checked="false">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  </button>
+                </div>
+
+                <!-- Campo de Senha -->
+                <div class="br-input mb-1">
+                  <label for="input-password">Senha</label>
+                  <input id="input-password" type="password" placeholder="Digite sua senha" />
+                  <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                  </button>
+                </div>               
+                
+                <!-- Checkbox e link de recuperação de senha -->
+                <div class="br-checkbox d-flex justify-content-between align-items-center flex-wrap mt-3">
+                  <div class="d-flex align-items-center">
+                    <input id="checkbox-01" name="checkbox-01" type="checkbox" aria-label="Manter-me conectado" checked="checked" />
+                    <label for="checkbox-01" class="mb-0 ml-2">Manter-me conectado</label>
+                  </div>
+                  <a class="br-item text-decoration-underline" href="javascript:void(0)">Esqueceu a senha?</a>
+                </div>
+              </div>
+
+              <div class="card-footer d-flex flex-column">
+                <!-- Botão de Entrar -->
+                <button class="br-button primary w-100 mb-1" type="submit">
+                  <i class="fas fa-user" aria-hidden="true"></i> Entrar
+                </button>
+                <hr>
+
+                <!-- Botão de Entrar com GovBR -->
+                <button class="br-button w-100" type="button">
+                  Entrar com&nbsp;
+                  <img id="img-govbr-colorido-b" src="https://www.gov.br/++theme++padrao_govbr/img/govbr-colorido-b.png" alt="gov.br"/>
+                </button>
+                
+                <div class="row">
+                  <div class="col"><a class="br-item" href="javascript:void(0)">Política de privacidade</a></div>
+                  <div class="col"><a class="br-item" href="javascript:void(0)">Precisa de ajuda?</a></div>              
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>         
   </div>
 </div>
