@@ -1,7 +1,8 @@
 <header class="br-header compact">
   <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
     <a href="https://www.gov.br">
-      <img src="/assets/govbr/img/imprensa.png" alt="Logomarca Imprensa Nacional" class="img-fluid" style="max-width: 150px; width: 40%;">
+      <img src="/assets/govbr/img/logo-govbr.png" alt="Logomarca Imprensa Nacional" class="img-fluid" style="max-width: 150px;" *ngIf="!userLogged">
+      <img src="/assets/govbr/img/imprensa.png" alt="Logomarca Imprensa Nacional" class="img-fluid" style="max-width: 150px; width: 40%;" *ngIf="userLogged">
     </a>
     <div id="acessibilidade" class="d-flex flex-column flex-md-row align-items-center mt-3 mt-md-0 gap-3" *ngIf="!userLogged">
       <a href="#" onclick="contrastScript().toggleContrast(event)" class="text-white text-decoration-none d-flex align-items-center">

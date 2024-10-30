@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poc-sso-login';
-  userLogged: boolean = false
+  userLogged: boolean = true
 
   constructor(){
 
