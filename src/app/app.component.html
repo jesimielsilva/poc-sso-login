@@ -1,19 +1,17 @@
-<header class="br-header compact">
-  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-    <a href="https://www.gov.br">
-      <img src="/assets/govbr/img/logo-govbr.png" alt="Logomarca GovBR" class="img-fluid" style="max-width: 150px;">
-    </a>
-    <div id="acessibilidade" class="d-flex flex-column flex-md-row align-items-center mt-3 mt-md-0 gap-3">
-      <a href="#" onclick="contrastScript().toggleContrast(event)" class="text-white text-decoration-none d-flex align-items-center">
-        <i class="fas fa-adjust me-2"></i><span>Alto Contraste</span>
-      </a>
-      <a href="//www.vlibras.gov.br" target="_BLANK" class="text-white text-decoration-none d-flex align-items-center">
-        <i class="fas fa-deaf me-2"></i><span>VLibras</span>
-      </a>
-    </div>
+<div class="box">
+  <!-- Header -->
+  <div class="header">
+    <app-header (userLogout)="logout($event)" [userLogged]="userLooged"></app-header>
   </div>
-</header>
+  
+  <!-- Body -->
+  <div class="body" [ngStyle]="{'height': innerWidth}"> 
+    <router-outlet (activate)="subscribeLogin($event)"></router-outlet>
+  </div>
+  
+  <!-- Footer -->
+  <div class="footer">
+      <app-footer [userLogged]="userLooged"></app-footer>
+  </div>
+</div>
 
-<br>
-
-<router-outlet></router-outlet>
