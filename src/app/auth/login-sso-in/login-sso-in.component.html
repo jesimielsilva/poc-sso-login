@@ -11,7 +11,7 @@
 
             <!-- Coluna da Imagem --> 
             <div class="d-flex justify-content-center">             
-              <img src="/assets/govbr/img/imprensa.png" alt="Imagem de Login" />   
+              <img src="/assets/govbr/img/imprensa.png" alt="Imagem de Login"/>   
             </div>
 
             <div class="card-header">
@@ -21,12 +21,13 @@
               </div>
             </div>
 
-            <form [formGroup]="form" (ngSubmit)="login()">
+            <form (ngSubmit)="onLogin()">
               <div class="card-content">
                 <!-- Campo de Usuário -->
                 <div class="br-input mb-1">
-                  <label for="input-usuario">Usuário</label>
-                  <input id="input-usuario"  formControlName = "user" type="text" placeholder="Nome do Usuário" />
+                  <label for="input-cpf">CPF</label>
+                  <input id="input-cpf" type="text" placeholder="Digite seu CPF" [(ngModel)]="username" name="username"/>
+
                   <button class="br-button" type="button" aria-label="Usuário" role="switch" aria-checked="false">
                     <i class="fas fa-user" aria-hidden="true"></i>
                   </button>
@@ -35,7 +36,7 @@
                 <!-- Campo de Senha -->
                 <div class="br-input mb-1">
                   <label for="input-password">Senha</label>
-                  <input id="input-password" formControlName = "password" type="password" placeholder="Digite sua senha" />
+                  <input id="input-password" type="password" placeholder="Digite sua senha" [(ngModel)]="password" name="password"/>
                   <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false">
                     <i class="fas fa-eye" aria-hidden="true"></i>
                   </button>

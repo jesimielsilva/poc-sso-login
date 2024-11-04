@@ -6,8 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent  implements OnInit{
   title = 'poc-sso-login';
+
   innerWidth: any
   userLooged: boolean = false
 
@@ -38,4 +40,5 @@ export class AppComponent  implements OnInit{
   logout(res: any){
     this.userLooged = res
   }
+
 }
