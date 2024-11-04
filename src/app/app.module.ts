@@ -7,6 +7,7 @@ import { LoginSsoInComponent } from './auth/login-sso-in/login-sso-in.component'
 import { SingUpInComponent } from './auth/sing-up-in/sing-up-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -18,10 +19,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    NgxMaskDirective  
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

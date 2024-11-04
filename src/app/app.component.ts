@@ -7,13 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'poc-sso-login';
-<<<<<<< Updated upstream
-=======
   userLogged: boolean = false
 
   constructor () {}
-  
 
-
->>>>>>> Stashed changes
 }

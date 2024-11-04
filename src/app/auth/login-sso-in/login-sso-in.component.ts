@@ -9,19 +9,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginSsoInComponent {
 
-  username = '';
-  password = '';
+  cpf = '';
 
   constructor (private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
-    this.authService.login(this.username, this.password).subscribe({
+    this.authService.login(this.cpf).subscribe({
       next: (response) => {
         console.log('login bem sucedido');
+        this.router.navigate(['/signup'])
       },
         error: (err) => {
           console.log('erro ao tentar logar', err);
-          alert('credencial invalida');
+          alert(`credencial invalida: ${this.cpf}` );
         }
     });   
   }
