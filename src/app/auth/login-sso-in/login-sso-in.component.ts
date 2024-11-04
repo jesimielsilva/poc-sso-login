@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login-sso-in',
@@ -13,7 +13,7 @@ export class LoginSsoInComponent {
 
   cpf = '';
 
-  @Output() logged = new EventEmitter<boolean>();
+  @Output() logged = new EventEmitter<boolean>();  
 
   constructor (private authService: AuthService, private router: Router) {}
 
@@ -32,6 +32,6 @@ export class LoginSsoInComponent {
 
   sendLogged(logged: boolean) {
     this.logged.emit(logged);
-  }
+  }   
 
 }
