@@ -1,152 +1,71 @@
-
 <!-- Table -->
-<div class="br-table" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse" data-random="data-random">
-  <div class="table-header">
-    <div class="top-bar">
-      <div class="table-title">Lista de Sistemas</div>
-      <div class="actions-trigger text-nowrap">
-        <button class="br-button circle" type="button" id="button-dropdown-density" title="Ver mais opções" data-toggle="dropdown" data-target="target01-79633" aria-label="Definir densidade da tabela" aria-haspopup="true" aria-live="polite"><i class="fas fa-ellipsis-v" aria-hidden="true"></i>
-        </button>
-        <div class="br-list" id="target01-79633" role="menu" aria-labelledby="button-dropdown-density" hidden="hidden">
-          <button class="br-item" type="button" data-density="small" role="menuitem">Densidade alta
-          </button><span class="br-divider"></span>
-          <button class="br-item" type="button" data-density="medium" role="menuitem">Densidade média
-          </button><span class="br-divider"></span>
-          <button class="br-item" type="button" data-density="large" role="menuitem">Densidade baixa
-          </button>
-        </div>
-      </div>
-      <div class="search-trigger">
-        <button class="br-button circle" type="button" id="button-input-search" data-toggle="search" aria-label="Abrir busca" aria-controls="table-searchbox-79633"><i class="fas fa-search" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-    <div class="search-bar">
-      <div class="br-input">
-        <label for="table-searchbox-79633">Buscar na tabela</label>
-        <input id="table-searchbox-79633" type="search" placeholder="Buscar na tabela" aria-labelledby="button-input-search" aria-label="Buscar na tabela"/>
-        <button class="br-button" type="button" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i>
-        </button>
-      </div>
-      <button class="br-button circle" type="button" data-dismiss="search" aria-label="Fechar busca"><i class="fas fa-times" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="selected-bar">
-      <div class="info"><span class="count">0</span><span class="text">item selecionado</span></div>
-      <div class="actions-trigger text-nowrap">
-        <button class="br-button circle inverted" type="button" id="button-dropdown-selection" data-toggle="dropdown" data-target="target02-79633" aria-controls="target02-79633" aria-label="Ver mais opções de ação" aria-haspopup="true"><i class="fas fa-ellipsis-v" aria-hidden="true"></i>
-        </button>
-        <div class="br-list" id="target02-79633" role="menu" aria-labelledby="button-dropdown-selection" hidden="hidden">
-          <button class="br-item" type="button" data-toggle="" role="menuitem">Ação 1
-          </button><span class="br-divider"></span>
-          <button class="br-item" type="button" role="menuitem">Ação 2
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <table>
-    <caption>Lista de Sistemas</caption>
-    <thead>
-      <tr >
-        <th class="column-checkbox" scope="col">
-          <div class="br-checkbox hidden-label">
-            <input id="check-all-79633" name="check-all-79633" type="checkbox" aria-label="Selecionar tudo" data-parent="check-01-79633"/>
-            <label for="check-all-79633">Selecionar todas as linhas</label>
-          </div>
-        </th>
-        <th cope="col" *ngFor="let column of header index as i "> 
-          {{column}}
-        </th>
+<div class="br-card p-3" *ngIf="!inForm">
+  <div class="br-table" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse"
+    data-random="data-random">
+    <div class="table-header">
+      <div class="top-bar">
+        <div class="table-title">Lista de Sistemas</div>
+        <div class="actions-trigger text-nowrap">
 
-      </tr>
-    </thead>
-    <tbody *ngFor="let item of systems index as i">
-      <tr>
-        <td>
-          <div class="br-checkbox hidden-label">
-            <input id="check-line-1-79633" name="check-line-1-79633" type="checkbox" aria-label="Selecionar linha 1" data-child="check-01-79633"/>
-            <label for="check-line-1-79633">Selecionar linha 1</label>
-          </div>
-        </td>
-        <td data-th="Título coluna 1">{{item.name}}</td>
-        <td data-th="Título coluna 2">{{item.validToken | date : 'dd-MM-yyyy'}}</td>
-        <td data-th="Título coluna 3">{{item.number}}</td>
-        <td data-th="Título coluna 4">{{item.emailUser}}</td>
-        <td data-th="Título coluna 5"></td>
-      </tr>
-
-    </tbody>
-  </table>
-  <div class="table-footer">
-    <nav class="br-pagination" aria-label="paginação" data-total="50" data-current="1" data-per-page="20">
-      <div class="pagination-per-page">
-        <div class="br-select">
-          <div class="br-input">
-            <label for="per-page-selection-random-79164">Exibir</label>
-            <input id="per-page-selection-random-79164" type="text" placeholder=" "/>
-            <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1" data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="br-list" tabindex="0">
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="per-page-10-random-79164" type="radio" name="per-page-random-79164" value="per-page-10-random-79164" checked="checked"/>
-                <label for="per-page-10-random-79164">10</label>
-              </div>
-            </div>
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="per-page-20-random-79164" type="radio" name="per-page-random-79164" value="per-page-20-random-79164"/>
-                <label for="per-page-20-random-79164">20</label>
-              </div>
-            </div>
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="per-page-30-random-79164" type="radio" name="per-page-random-79164" value="per-page-30-random-79164"/>
-                <label for="per-page-30-random-79164">30</label>
-              </div>
-            </div>
-          </div>
         </div>
-      </div><span class="br-divider d-none d-sm-block mx-3"></span>
-      <div class="pagination-information d-none d-sm-flex"><span class="current">1</span>&ndash;<span class="per-page">20</span>&nbsp;de&nbsp;<span class="total">50</span>&nbsp;itens</div>
-      <div class="pagination-go-to-page d-none d-sm-flex ml-auto">
-        <div class="br-select">
-          <div class="br-input">
-            <label for="go-to-selection-random-46248">Página</label>
-            <input id="go-to-selection-random-46248" type="text" placeholder=" "/>
-            <button class="br-button" type="button" aria-label="Exibir lista" tabindex="-1" data-trigger="data-trigger"><i class="fas fa-angle-down" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="br-list" tabindex="0">
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="go-to-1-random-46248" type="radio" name="go-to-random-46248" value="go-to-1-random-46248" checked="checked"/>
-                <label for="go-to-1-random-46248">1</label>
-              </div>
-            </div>
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="go-to-2-random-46248" type="radio" name="go-to-random-46248" value="go-to-2-random-46248"/>
-                <label for="go-to-2-random-46248">2</label>
-              </div>
-            </div>
-            <div class="br-item" tabindex="-1">
-              <div class="br-radio">
-                <input id="go-to-3-random-46248" type="radio" name="go-to-random-46248" value="go-to-3-random-46248"/>
-                <label for="go-to-3-random-46248">3</label>
-              </div>
-            </div>
-          </div>
+        <div class="search-trigger">
+          <button class="br-button circle primary dark-mode mr-3" type="button" aria-label="Ícone ilustrativo" title="Exportar Arquivo CSV"><i
+            class="fas fa-file-alt" aria-hidden="true"></i>
+        </button>
+          <button class="br-button circle" type="button" id="button-input-search" data-toggle="plus" title="Cadastrar Sistema"
+            aria-label="Abrir busca" aria-controls="table-searchbox-79633" (click)="toForm(true, 1)"><i class="fas fa-plus"
+              aria-hidden="true"></i>
+          </button>
+          
         </div>
-      </div><span class="br-divider d-none d-sm-block mx-3"></span>
-      <div class="pagination-arrows ml-auto ml-sm-0">
-        <button class="br-button circle" type="button" aria-label="Voltar página"><i class="fas fa-angle-left" aria-hidden="true"></i>
-        </button>
-        <button class="br-button circle" type="button" aria-label="Página seguinte"><i class="fas fa-angle-right" aria-hidden="true"></i>
-        </button>
       </div>
-    </nav>
+    </div>
+    <table>
+      <caption>Lista de Sistemas</caption>
+      <thead>
+        <tr>
+          <th class="column-checkbox" scope="col">
+            <div class="br-checkbox hidden-label">
+              <input id="check-all-79633" name="check-all-79633" type="checkbox" aria-label="Selecionar tudo"
+                data-parent="check-01-79633" />
+              <label for="check-all-79633">Selecionar todas as linhas</label>
+            </div>
+          </th>
+          <th cope="col" *ngFor="let column of header index as i ">
+            {{column}}
+          </th>
+
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of systems index as i">
+        <tr>
+          <td>
+            <div class="br-checkbox hidden-label">
+              <input id="check-line-1-79633" name="check-line-1-79633" type="checkbox" aria-label="Selecionar linha 1"
+                data-child="check-01-79633" />
+              <label for="check-line-1-79633">Selecionar linha 1</label>
+            </div>
+          </td>
+          <td data-th="Título coluna 1">{{item.name}}</td>
+          <td data-th="Título coluna 2">{{item.validToken | date : 'dd-MM-yyyy'}}</td>
+          <td data-th="Título coluna 3">{{item.number}}</td>
+          <td data-th="Título coluna 4">{{item.emailUser}}</td>
+          <td data-th="Título coluna 5">
+            <button class="br-button circle primary mr-3" type="button" aria-label="Ícone ilustrativo"><i
+                class="fas fa-pen" aria-hidden="true" (click)="editSystem(item)"></i>
+            </button>
+            <button class="br-button circle secondary mr-3" type="button" aria-label="Ícone ilustrativo"><i
+                class="fas fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
   </div>
+</div>
+<!-- Formulário -->
+<div class="br-card p-3" *ngIf="inForm">
+  <app-form-system [system]="systemToEdit" [type]="typeToForm" (inForm)="getInRegister($event)"></app-form-system>
 </div>

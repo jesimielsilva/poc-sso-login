@@ -8,6 +8,7 @@ import { SingUpInComponent } from './auth/sing-up-in/sing-up-in.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormSystemComponent } from './forms/form-system/form-system.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginSsoInComponent,
     SingUpInComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FormSystemComponent
   ],
   imports: [
     BrowserModule,

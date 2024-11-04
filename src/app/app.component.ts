@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent  implements OnInit{
   title = 'poc-sso-login';
-
+  innerWidth: any
   userLooged: boolean = false
 
   constructor(private router: Router){
@@ -16,9 +16,7 @@ export class AppComponent  implements OnInit{
   }
 
   ngOnInit(): void {
-    if(!this.userLooged){
-      this.router.navigateByUrl('/login')
-    }
+    
   }
   
   getLogged(logged: boolean){
@@ -29,5 +27,15 @@ export class AppComponent  implements OnInit{
     subscribe.logged.subscribe((res: any) =>{
       this.getLogged(res)
     })
+  }
+
+  subscribeLoggout(subscribe: any){
+    subscribe.logged.subscribe((res: any) =>{
+      this.getLogged(res)
+    })
+  }
+
+  logout(res: any){
+    this.userLooged = res
   }
 }

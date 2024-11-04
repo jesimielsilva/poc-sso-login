@@ -1,11 +1,11 @@
 <div class="box">
   <!-- Header -->
   <div class="header">
-    <app-header [userLogged]="userLooged"></app-header>
+    <app-header (userLogout)="logout($event)" [userLogged]="userLooged"></app-header>
   </div>
   
   <!-- Body -->
-  <div class="body"> 
+  <div class="body" [ngStyle]="{'height': innerWidth}"> 
     <router-outlet (activate)="subscribeLogin($event)"></router-outlet>
   </div>
   
