@@ -4,3 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.body{
+    overflow: auto;
+    margin: 10px;
+}

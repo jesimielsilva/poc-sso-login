@@ -25,11 +25,11 @@ export class LoginSsoInComponent {
   login(){
     const user = this.form.value.user
     const pass = this.form.value.password
-
-    if(user === 'admin' && pass ==='aaddmm'){
-      this.sendLogged(true)
-      this.router.navigateByUrl('/signup')
-    }
+    this.sendLogged(true)
+    this.router.navigateByUrl('/signup')
+    /* if(user === 'admin' && pass ==='aaddmm'){
+      
+    } */
   }
 
   sendLogged(logged: boolean) {
