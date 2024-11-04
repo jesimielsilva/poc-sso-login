@@ -26,29 +26,18 @@
                 <!-- Campo de Usuário -->
                 <div class="br-input mb-1">
                   <label for="input-cpf">CPF</label>
-                  <input id="input-cpf" type="text" placeholder="Digite seu CPF" [(ngModel)]="username" name="username"/>
-
-                  <button class="br-button" type="button" aria-label="Usuário" role="switch" aria-checked="false">
+                  <input id="input-cpf" type="text" placeholder="Digite seu CPF" mask="000.000.000-00" [(ngModel)]="cpf" name="cpf"/>
+                  <button class="br-button" type="button" aria-label="CPF" role="switch" aria-checked="false">              
                     <i class="fas fa-user" aria-hidden="true"></i>
                   </button>
-                </div>
-
-                <!-- Campo de Senha -->
-                <div class="br-input mb-1">
-                  <label for="input-password">Senha</label>
-                  <input id="input-password" type="password" placeholder="Digite sua senha" [(ngModel)]="password" name="password"/>
-                  <button class="br-button" type="button" aria-label="Exibir senha" role="switch" aria-checked="false">
-                    <i class="fas fa-eye" aria-hidden="true"></i>
-                  </button>
-                </div>               
+                </div>                             
                 
                 <!-- Checkbox e link de recuperação de senha -->
                 <div class="br-checkbox d-flex justify-content-between align-items-center flex-wrap mt-3">
                   <div class="d-flex align-items-center">
                     <input id="checkbox-01" name="checkbox-01" type="checkbox" aria-label="Manter-me conectado" checked="checked" />
                     <label for="checkbox-01" class="mb-0 ml-2">Manter-me conectado</label>
-                  </div>
-                  <a class="br-item text-decoration-underline" href="javascript:void(0)">Esqueceu a senha?</a>
+                  </div>                  
                 </div>
               </div>
 
@@ -57,6 +46,7 @@
                 <button class="br-button primary w-100 mb-1" type="submit">
                   <i class="fas fa-user" aria-hidden="true"></i> Entrar
                 </button>
+                <a class="br-item text-decoration-underline" href="javascript:void(0)">Esqueceu a senha?</a>
                 <hr>
 
                 <!-- Botão de Entrar com GovBR -->
