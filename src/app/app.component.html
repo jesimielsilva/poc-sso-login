@@ -5,7 +5,7 @@
   </div>
   
   <!-- Body -->
-  <div class="" [ngStyle]="{'height': innerWidth}"> 
+  <div class="body-component" [ngStyle]="{'height': innerWidth}"> 
     <router-outlet (activate)="subscribeLogin($event)"></router-outlet>
   </div>
   
@@ -14,4 +14,3 @@
       <app-footer [userLogged]="userLooged"></app-footer>
   </div>
 </div>
-
