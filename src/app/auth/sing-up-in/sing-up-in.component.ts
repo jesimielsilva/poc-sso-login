@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { System } from '../../shared/models/system.model';
+import { SystemService } from '../../services/system.service';
 
 @Component({
   selector: 'app-sing-up-in',
@@ -14,34 +15,17 @@ export class SingUpInComponent implements OnInit {
   systemToEdit: System = <System>{}
   typeToForm: number = 0
 
-  constructor() {
+  constructor(
+    private systemService: SystemService
+  ) {
     this.header = ['Nome Responsável', 'Validade Token', 'Número', 'Email Responsável', 'Ações']
     this.systems = [
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      {name: 'Test1', validToken: new Date(), number: '727272733', emailUser: 'test@gmail.com'},
-      
     ]
+    this.getListOfSystem()    
   }
 
   ngOnInit(): void {
- 
+    
   }
 
   toForm(value: boolean, type: number){
@@ -51,10 +35,23 @@ export class SingUpInComponent implements OnInit {
 
   getInRegister(value: boolean){
     this.toForm(value, 1)
+    this.getListOfSystem()
   }
 
   editSystem(system: System){
     this.toForm(true, 2)
     this.systemToEdit = system
+  }
+
+  getListOfSystem(){
+    this.systemService.get().subscribe(res => {
+      this.systems = res
+    })
+  }
+
+  delete(id: number){
+    this.systemService.delete(id).subscribe(res => {
+      this.getListOfSystem()
+    })
   }
 }

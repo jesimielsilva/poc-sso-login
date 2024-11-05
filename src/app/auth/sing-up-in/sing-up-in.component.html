@@ -54,7 +54,7 @@
             <button class="br-button circle primary mr-3" type="button" aria-label="Ícone ilustrativo"><i
                 class="fas fa-pen" aria-hidden="true" (click)="editSystem(item); myDialog.show()"></i>
             </button>
-            <button class="br-button circle secondary mr-3" type="button" aria-label="Ícone ilustrativo"><i
+            <button class="br-button circle secondary mr-3" type="button" (click)="delete(item.id!)" aria-label="Ícone ilustrativo"><i
                 class="fas fa-trash" aria-hidden="true"></i>
             </button>
           </td>
@@ -73,7 +73,7 @@
     <div class="div br-modal auto " aria-modal="true" role="dialog" aria-labelledby="modalalerttitle">
       <div class="br-modal-header">
         <div class="modal-title" id="modalalerttitle" style="color: black;">{{typeToForm == 1 ? "Cadastrando": "Editando"}} sistema</div>
-        <button class="br-button close circle" type="button" data-dismiss="br-modal" (click)="myDialog.close()" aria-label="Fechar"><i
+        <button class="br-button close circle" type="button" data-dismiss="br-modal" (click)="myDialog.close(); getInRegister(false)" aria-label="Fechar"><i
             class="fas fa-times" aria-hidden="true"></i>
         </button>
       </div>
