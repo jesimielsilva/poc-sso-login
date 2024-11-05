@@ -12,6 +12,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class LoginSsoInComponent {
 
   cpf = '';
+  loginError = false;
 
   @Output() logged = new EventEmitter<boolean>();  
 
@@ -25,7 +26,7 @@ export class LoginSsoInComponent {
       },
         error: (err) => {
           console.log('erro ao tentar logar', err);
-          alert(`credencial invalida: ${this.cpf}` );
+          this.loginError = true;
         }
     });   
   } 
