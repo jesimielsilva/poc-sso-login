@@ -2,7 +2,7 @@
 <div class="login-container br-container">
   <!-- Alinhamento dos elementos na linha principal -->
   <div class="br-row align-items-center">
-    <div class="row">    
+    <div>    
 
       <!-- Coluna do Card de Login -->
       <div class="col">
@@ -27,6 +27,7 @@
                 <div class="br-input mb-1">
                   <label for="input-cpf">CPF</label>
                   <input id="input-cpf" type="text" placeholder="Digite seu CPF" mask="000.000.000-00" [(ngModel)]="cpf" name="cpf"/>
+                  <span class="feedback danger" role="alert" id="danger"><i class="fas fa-times-circle" aria-hidden="true"></i>Mensagem de Erro</span>
                   <button class="br-button" type="button" aria-label="CPF" role="switch" aria-checked="false">              
                     <i class="fas fa-user" aria-hidden="true"></i>
                   </button>
