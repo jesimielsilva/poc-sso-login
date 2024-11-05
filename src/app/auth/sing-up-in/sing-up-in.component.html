@@ -1,0 +1,87 @@
+<!-- Table -->
+<div class="br-card p-3" >
+  <div class="br-table" data-search="data-search" data-selection="data-selection" data-collapse="data-collapse"
+    data-random="data-random">
+    <div class="table-header">
+      <div class="top-bar">
+        <div class="table-title">Lista de Sistemas</div>
+        <div class="actions-trigger text-nowrap">
+
+        </div>
+        <div class="search-trigger">
+          <button class="br-button circle primary dark-mode mr-3" type="button" aria-label="Ícone ilustrativo"
+            title="Exportar Arquivo CSV"><i class="fas fa-file-alt" aria-hidden="true"></i>
+          </button>
+          <button class="br-button circle" type="button" id="button-input-search" data-toggle="plus"
+            title="Cadastrar Sistema" aria-label="Abrir busca" aria-controls="table-searchbox-79633"
+            (click)="toForm(true, 1); myDialog.show() "><i class="fas fa-plus" aria-hidden="true"></i>
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <table>
+      <caption>Lista de Sistemas</caption>
+      <thead>
+        <tr>
+          <th class="column-checkbox" scope="col">
+            <div class="br-checkbox hidden-label">
+              <input id="check-all-79633" name="check-all-79633" type="checkbox" aria-label="Selecionar tudo"
+                data-parent="check-01-79633" />
+              <label for="check-all-79633">Selecionar todas as linhas</label>
+            </div>
+          </th>
+          <th cope="col" *ngFor="let column of header index as i ">
+            {{column}}
+          </th>
+
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of systems index as i">
+        <tr>
+          <td>
+            <div class="br-checkbox hidden-label">
+              <input id="check-line-1-79633" name="check-line-1-79633" type="checkbox" aria-label="Selecionar linha 1"
+                data-child="check-01-79633" />
+              <label for="check-line-1-79633">Selecionar linha 1</label>
+            </div>
+          </td>
+          <td data-th="Título coluna 1">{{item.name}}</td>
+          <td data-th="Título coluna 2">{{item.validToken | date : 'dd-MM-yyyy'}}</td>
+          <td data-th="Título coluna 3">{{item.number}}</td>
+          <td data-th="Título coluna 4">{{item.emailUser}}</td>
+          <td data-th="Título coluna 5">
+            <button class="br-button circle primary mr-3" type="button" aria-label="Ícone ilustrativo"><i
+                class="fas fa-pen" aria-hidden="true" (click)="editSystem(item); myDialog.show()"></i>
+            </button>
+            <button class="br-button circle secondary mr-3" type="button" aria-label="Ícone ilustrativo"><i
+                class="fas fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<!-- Formulário -->
+
+<dialog #myDialog>
+
+  <div class="d-flex justify-content-center align-items-center" style="height: 100%;"> 
+    <div class="div br-modal auto " aria-modal="true" role="dialog" aria-labelledby="modalalerttitle">
+      <div class="br-modal-header">
+        <div class="modal-title" id="modalalerttitle" style="color: black;">{{typeToForm == 1 ? "Cadastrando": "Editando"}} sistema</div>
+        <button class="br-button close circle" type="button" data-dismiss="br-modal" (click)="myDialog.close()" aria-label="Fechar"><i
+            class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="br-modal-body">
+        <app-form-system [system]="systemToEdit" [type]="typeToForm" (inForm)="getInRegister($event)"></app-form-system>
+      </div>
+    </div>
+  </div>
+  
+
+</dialog>
